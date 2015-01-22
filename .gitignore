@@ -1,0 +1,14 @@
+data/
+.RData
+.Rhistory
+X_test.txt
+X_train.txt
+activity_labels.txt
+features.txt
+means_by_activity_and_subject.csv
+mergeddata.csv
+subject_test.txt
+subject_train.txt
+y_test.txt
+y_train.txt
+notes.R
