@@ -1,7 +1,7 @@
 # jhdss_gacd_project
 Project for the course "Getting and Cleaning Data" of the Data Science specialization offered by Johns Hopkins.
 
-The run_analysis.R file performs all the steps necessary to read in the file and produce a tidy summary that includes the means for all of the mean and std data columns in the original data sets. I'll outline those steps here.
+The run_analysis.R file performs all the steps necessary to read in the file and produce a tidy summary that includes the means of all of the mean and std data columns in the original data sets. I'll outline those steps here.
 
 Asumption: the run_analysis.R file is in the same folder as the following files:
 * activity_labels.txt
@@ -13,7 +13,7 @@ Asumption: the run_analysis.R file is in the same folder as the following files:
 * y_test.txt
 * y_train.txt
 
-These can be extract from the zip file found at:
+These can be extracted from the zip file found at:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The steps performed by run_analysis.R are:
