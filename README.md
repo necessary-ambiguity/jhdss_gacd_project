@@ -19,17 +19,16 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 The steps performed by run_analysis.R are:
 
 1. Read in the features and activities
-2. For each set:
+2. For each set ("train" and "test"):
   1. Read in the subject and y data files, applying a column name to each
   2. Read in the X data file and set its column names to features
   3. Combine all the columns from the x, y and subject sets into a single data frame
   4. Merge the activity names into the data frame
 3. Combine the rows from the train and test sets
 4. Use grep to determine the relevant columns
-5. Use tolower and gsub to clean up the column names (make lower case and remove periods)
-6. Update column names to be descriptive (e.g. replace "acc" with "acceleration", etc)
-7. Save the resulting data frame to a file, so that re-running the script will be faster.
-8. Build a new data frame with the same columns and with a single row for each subject and activity, where the value in a data column	is the mean for that column for the given subject and activity
-9. Save the new data frame to a file
+5. Save the resulting data frame to a file, so that re-running the script will be faster.
+6. Use tolower and gsub to clean up the column names (make lower case, remove periods, abd replace short forms with full words e.g. replace acc with accelerometer etc)
+7. Build a new data frame with the same columns and with a single row for each subject and activity, where the value in a data column	is the mean for that column for the given subject and activity
+8. Save the new data frame to a file
 
 The resulting file, named "means_by_activity_and_subject.txt", is available in this repository, along with a markdown codebook "means_by_activity_and_subject__codebook.md" describing the data.
