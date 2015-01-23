@@ -1,35 +1,105 @@
-# jhdss_gacd_project
-Project for the course "Getting and Cleaning Data" of the Data Science specialization offered by Johns Hopkins.
+# means_by_activity_and_subject__codebook
+Codebook for the data file means_by_activity_and_subject__codebook.txt
 
-The run_analysis.R file performs all the steps necessary to read in the file and produce a tidy summary that includes the means for all of the mean and std data columns in the original data sets. I'll outline those steps here.
+File description:
+There are 30 test subjects, each performing 6 different activities.
+Thus there are 6*30=180 rows in the data file, one for each unique (subject, activity) pair.
+There is also a header row containing the column names.
+The columns are each separated by a single space.
 
-Asumption: the run_analysis.R file is in the same folder as the following files:
-* activity_labels.txt
-* features.txt
-* subject_test.txt
-* subject_train.txt
-* X_test.txt
-* X_train.txt
-* y_test.txt
-* y_train.txt
 
-These can be extract from the zip file found at:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+These two columns uniquely identify each row:
+subject: integer value indicating the test subject
+activity: name of the activity being measured
 
-The steps performed by run_analysis.R are:
+The remaining columns are average values calculated for the row's subject and activity:
+timebodyaccelerometermeanx: mean of the x axis acceration values due to body movement (estimated) for the given subject and per unit of time
+timebodyaccelerometermeany: mean of the y axis acceration values due to body movement (estimated) for the given subject and per unit of time
+timebodyaccelerometermeanz: mean of the z axis acceration values due to body movement (estimated) for the given subject and per unit of time
 
-1. Read in the features and activities
-2. For each set:
-..1. Read in the subject and y data files, applying a column name to each
-..2. Read in the X data file and set its column names to features
-..3. Combine all the columns from the x, y and subject sets into a single data frame
-..4. Merge the activity names into the data frame
-3. Combine the rows from the train and test sets
-4. Use grep to determine the relevant columns
-5. Use tolower and gsub to clean up the column names (make lower case and remove periods)
-6. Update column names to be descriptive (e.g. replace "acc" with "acceleration", etc)
-7. Save the resulting data frame to a file, so that re-running the script will be faster.
-8. Build a new data frame with the same columns and with a single row for each subject and activity, where the value in a data column	is the mean for that column for the given subject and activity
-9. Save the new data frame to a file
+timebodyaccelerometerstandarddeviationx: standard deviation of the x axis acceration values due to body movement (estimated) for the given subject and per unit of time
+timebodyaccelerometerstandarddeviationy: standard deviation of the y axis acceration values due to body movement (estimated) for the given subject and per unit of time
+timebodyaccelerometerstandarddeviationz: standard deviation of the z axis acceration values due to body movement (estimated) for the given subject and per unit of time
 
-The resulting file, named "means_by_activity_and_subject.txt", is available in this repository, along with a markdown codebook "means_by_activity_and_subject__codebook.md" describing the data.
+timegravityaccelerometermeanx: mean of the x axis acceration values due to gravity for the given subject and per unit of time
+timegravityaccelerometermeany: mean of the y axis acceration values due to gravity for the given subject and per unit of time
+timegravityaccelerometermeanz: mean of the z axis acceration values due to gravity for the given subject and per unit of time
+
+timegravityaccelerometerstandarddeviationx: standard deviation of the x axis acceration values due to gravity for the given subject and per unit of time
+timegravityaccelerometerstandarddeviationy: standard deviation of the y axis acceration values due to gravity for the given subject and per unit of time
+timegravityaccelerometerstandarddeviationz: standard deviation of the z axis acceration values due to gravity for the given subject and per unit of time
+
+timebodyaccelerometerjerkmeanx: mean of the x axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time
+timebodyaccelerometerjerkmeany: mean of the y axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time
+timebodyaccelerometerjerkmeanz: mean of the z axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time
+
+timebodyaccelerometerjerkstandarddeviationx: standard deviation of the x axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time
+timebodyaccelerometerjerkstandarddeviationy: standard deviation of the y axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time
+timebodyaccelerometerjerkstandarddeviationz: standard deviation of the z axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time
+
+timebodygyroscopemeanx: mean of the x axis gyroscope values due to body movement (estimated) for the given subject and per unit of time
+timebodygyroscopemeany: mean of the y axis gyroscope values due to body movement (estimated) for the given subject and per unit of time
+timebodygyroscopemeanz: mean of the z axis gyroscope values due to body movement (estimated) for the given subject and per unit of time
+
+timebodygyroscopestandarddeviationx: standard deviation of the x axis gyroscope values due to body movement (estimated) for the given subject and per unit of time
+timebodygyroscopestandarddeviationy: standard deviation of the y axis gyroscope values due to body movement (estimated) for the given subject and per unit of time
+timebodygyroscopestandarddeviationz: standard deviation of the z axis gyroscope values due to body movement (estimated) for the given subject and per unit of time
+
+timebodygyroscopejerkmeanx: mean of the x axis of the jerk gyroscopic measure (derived from estimated body acceleration) for the given subject and per unit of time
+timebodygyroscopejerkmeany: mean of the y axis of the jerk gyroscopic measure (derived from estimated body acceleration) for the given subject and per unit of time
+timebodygyroscopejerkmeanz: mean of the z axis of the jerk gyroscopic measure (derived from estimated body acceleration) for the given subject and per unit of time
+
+timebodygyroscopejerkstandarddeviationx: standard deviation of the x axis of the jerk gyroscopic measure (derived from estimated body acceleration) for the given subject and per unit of time
+timebodygyroscopejerkstandarddeviationy: standard deviation of the y axis of the jerk gyroscopic measure (derived from estimated body acceleration) for the given subject and per unit of time
+timebodygyroscopejerkstandarddeviationz: standard deviation of the z axis of the jerk gyroscopic measure (derived from estimated body acceleration) for the given subject and per unit of time
+
+timebodyaccelerometermagnitudemean: mean of the acceration magnitude values due to body movement (estimated) for the given subject and per unit of time
+timebodyaccelerometermagnitudestandarddeviation: standard deviation of the acceration magnitude values due to body movement (estimated) for the given subject and per unit of time
+
+timegravityaccelerometermagnitudemean: mean of the acceration magnitude values due to gravity for the given subject and per unit of time
+timegravityaccelerometermagnitudestandarddeviation: standard deviation of the acceration magnitude values due to gravity for the given subject and per unit of time
+
+timebodyaccelerometerjerkmagnitudemean: mean of the jerk acceleration magnitude (derived from estimated body acceleration) for the given subject and per unit of time
+timebodyaccelerometerjerkmagnitudestandarddeviation: standard deviation of the jerk acceleration magnitude (derived from estimated body acceleration) for the given subject and per unit of time
+
+timebodygyroscopemagnitudemean: mean of the gyroscope magnitude values due to body movement (estimated) for the given subject and per unit of time
+timebodygyroscopemagnitudestandarddeviation: standard deviation of the gyroscope magnitude values due to body movement (estimated) for the given subject and per unit of time
+
+timebodygyroscopejerkmagnitudemean: mean of the jerk gyroscopic measure magnitude (derived from estimated body acceleration) for the given subject and per unit of time
+timebodygyroscopejerkmagnitudestandarddeviation: standard deviation of the jerk gyroscopic measure magnitude (derived from estimated body acceleration) for the given subject and per unit of time
+
+frequencybodyaccelerometermeanx: mean of the x axis acceration values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometermeany: mean of the y axis acceration values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometermeanz: mean of the z axis acceration values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodyaccelerometerstandarddeviationx: standard deviation of the x axis acceration values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometerstandarddeviationy: standard deviation of the y axis acceration values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometerstandarddeviationz: standard deviation of the z axis acceration values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodyaccelerometerjerkmeanx: mean of the x axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometerjerkmeany: mean of the y axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometerjerkmeanz: mean of the z axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodyaccelerometerjerkstandarddeviationx: standard deviation of the x axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometerjerkstandarddeviationy: standard deviation of the y axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometerjerkstandarddeviationz: standard deviation of the z axis of the jerk acceleration (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodygyroscopemeanx: mean of the x axis gyroscope values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodygyroscopemeany: mean of the y axis gyroscope values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodygyroscopemeanz: mean of the z axis gyroscope values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodygyroscopestandarddeviationx: standard deviation of the x axis gyroscope values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodygyroscopestandarddeviationy: standard deviation of the y axis gyroscope values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodygyroscopestandarddeviationz: standard deviation of the z axis gyroscope values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodyaccelerometermagnitudemean: mean of the acceration magnitude values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodyaccelerometermagnitudestandarddeviation: standard deviation of the acceration magnitude values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodybodyaccelerometerjerkmagnitudemean: mean of the jerk acceleration magnitude (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodybodyaccelerometerjerkmagnitudestandarddeviation: standard deviation of the jerk acceleration magnitude (derived from estimated body acceleration) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodybodygyroscopemagnitudemean: mean of the gyroscope magnitude values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodybodygyroscopemagnitudestandarddeviation: standard deviation of the gyroscope magnitude values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+
+frequencybodybodygyroscopejerkmagnitudemean: mean of the gyroscope magnitude values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
+frequencybodybodygyroscopejerkmagnitudestandarddeviation: standard deviation of the gyroscope magnitude values due to body movement (estimated) for the given subject and per unit of time after Fast Fourier Transform
