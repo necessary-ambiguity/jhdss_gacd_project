@@ -20,10 +20,10 @@ The steps performed by run_analysis.R are:
 
 1. Read in the features and activities
 2. For each set:
-..1. Read in the subject and y data files, applying a column name to each
-..2. Read in the X data file and set its column names to features
-..3. Combine all the columns from the x, y and subject sets into a single data frame
-..4. Merge the activity names into the data frame
+⋅⋅1. Read in the subject and y data files, applying a column name to each
+⋅⋅2. Read in the X data file and set its column names to features
+⋅⋅3. Combine all the columns from the x, y and subject sets into a single data frame
+⋅⋅4. Merge the activity names into the data frame
 3. Combine the rows from the train and test sets
 4. Use grep to determine the relevant columns
 5. Use tolower and gsub to clean up the column names (make lower case and remove periods)
