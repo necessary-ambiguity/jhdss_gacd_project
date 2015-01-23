@@ -32,5 +32,4 @@ The steps performed by run_analysis.R are:
 8. Build a new data frame with the same columns and with a single row for each subject and activity, where the value in a data column	is the mean for that column for the given subject and activity
 9. Save the new data frame to a file
 
-The resulting file, named "means_by_activity_and_subject.txt", is available in this repository, along with a codebook
-"means_by_activity_and_subject__codebook.txt" describing the data.
+The resulting file, named "means_by_activity_and_subject.txt", is available in this repository, along with a markdown codebook "means_by_activity_and_subject__codebook.md" describing the data.
